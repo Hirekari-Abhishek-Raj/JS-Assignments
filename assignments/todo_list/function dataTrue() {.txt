@@ -1,0 +1,29 @@
+function dataTrue() {
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((Response) => {
+      return Response.json()
+    })
+    .then((completedata) => {
+      console.log("completedata", completedata)
+
+      const dataTrue = completedata.filter((data) => data.completed)
+
+      console.log("dataTrue", dataTrue)
+      console.log("dataFalse", dataFalse)
+    })
+}
+
+function dataFalse() {
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((Response) => {
+      return Response.json()
+    })
+    .then((completedata) => {
+      console.log("completedata", completedata)
+
+      const dataFalse = completedata.filter((data) => !data.completed)
+
+      console.log("dataTrue", dataTrue)
+      console.log("dataFalse", dataFalse)
+    })
+}
